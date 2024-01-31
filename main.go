@@ -13,9 +13,9 @@ var s [][]byte
 func main() {
 	fmt.Println("Starting memalloc")
   
-  sleepDuration := flag.Int("sleep", 250, "Time in ms to wait between allocations")
+  sleepDuration := flag.Int("sleep", 250, "Time in ms to wait between cycles")
   chunkSize := flag.Int("size", 100, "Chunk size in MiB to allocate per cycle")
-  maxMem := flag.Int("max", math.MaxInt, "Maximum memory that should be consumed")
+  maxMem := flag.Int("max", math.MaxInt, "Maximum memory that should be consumed, in MiB")
   flag.Parse()
 	var m runtime.MemStats
   for x := 0; x < math.MaxInt; x++ {
